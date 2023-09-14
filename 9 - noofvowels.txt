@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+public class noofvowels{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the string : ");
+        String str = s.nextLine();
+        char[] arr = str.toCharArray();
+        char[] c = {'A','E','I','O','U','a','e','i','o','u'};
+        int l = str.length();
+        int vowel = 0;
+        for(int i=0;i<l;i++){
+            for(int j=0;j<10;j++){
+                if(arr[i]==c[j]){
+                    vowel = vowel+1;
+                }
+            }
+        }
+        System.out.println("No of vowels : "+vowel);
+    }
+}

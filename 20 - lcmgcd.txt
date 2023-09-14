@@ -1,0 +1,55 @@
+import java.util.*;
+public class lcmgcd{
+    public static void main(String args[]){
+        int lcm=0, gcd=0;
+        Scanner s = new Scanner (System.in);
+        System.out.println("Enter the range: ");
+        int r = s.nextInt();
+        int a[] = new int [r];
+        for(int i=0; i< r; i++){
+            System.out.println("Enter the number: ");
+            a[i] = s.nextInt();
+        }
+        lcm = lcm(a[0],a[1]);
+        gcd = gcd(a[0],a[1]);
+        if (r>2){
+            for(int i=2; i<r;i++){
+                lcm = lcm(lcm,a[i]);
+            }
+            for (int i=2; i<r; i++){
+                gcd = gcd(lcm,a[i]);
+            }
+        }
+        System.out.println("Lcm = "+lcm);
+        System.out.println("Gcd = "+gcd);
+    }
+    public static int lcm (int a,int b){
+        int g=0,lcm;
+        if (a>b){
+            g = a;
+        }
+        else{
+            g =b;
+        }
+        while (true){
+            if ((g%a == 0)&& (g%b == 0)){
+                lcm = g;
+                break;
+            }
+            g++;
+        }
+        return lcm;
+    }
+    public static int gcd(int x,int y){
+        int r = 0, a, b;
+        a = (x > y) ? x : y; 
+        b = (x < y) ? x : y;
+        r = b;
+        while (a % b != 0) {
+            r = a % b;
+            a = b;
+            b = r;
+        }
+        return r;
+    }
+}

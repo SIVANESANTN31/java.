@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class perfectsquare{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the lower range : ");
+        int lr = s.nextInt();
+        System.out.println("Enter the upper range : ");
+        int ur = s.nextInt();
+        int sum = 0;
+        if(lr>=ur){
+            System.out.println("Invalid Range");
+        }
+        else{
+             for(int i=lr;i<=ur;i++){
+                 sum = 0;
+                 int j = i*i;
+                 while((j>0)&&(j<=ur)){
+                     sum = sum+(i%10);
+                     j=j/10;
+               }
+                 if(i*i<=ur){
+                     if(sum<=10){
+                     System.out.print(+(i*i)+" ");
+                 }
+               }
+            }
+        }
+    }
+}

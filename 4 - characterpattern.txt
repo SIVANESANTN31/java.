@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class charpattern{
+    public static void main(String[] args){
+       Scanner s = new Scanner(System.in);
+       System.out.println("Enter the character to be printed : ");
+       String c = s.nextLine();
+       System.out.println("Enter the number of times to be printed : ");
+       int n = s.nextInt();
+       for(int i=1;i<=n;i++){
+           for(int j=0;j<i;j++){
+               System.out.print(c);
+           }
+           System.out.println(" ");
+       }
+    }
+}

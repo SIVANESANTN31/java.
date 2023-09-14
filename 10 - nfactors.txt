@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+public class nfactors{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number : ");
+        int m = s.nextInt();
+        System.out.println("Enter the value of n : ");
+        int n = s.nextInt();
+        if((m<=0)||(n<=0)){
+            System.out.println("Invalid input");
+        }
+        else{
+        int sum=0,high=0;
+        if(m<=0){
+            System.out.println("Invalid Value");
+            }
+        else{
+            for(int i=1;i<=m;i++){
+                if(m%i==0){
+                    sum=sum+1;
+                if(n==sum){
+                    System.out.println(n+"th factor of "+m+" is : "+i);
+                        }
+                    }
+                }
+            }
+        if(n<sum){
+        System.out.println("Number of factors : "+sum);
+        }
+        else{
+            System.out.println("Invalid input");
+        }
+    }
+}
+}

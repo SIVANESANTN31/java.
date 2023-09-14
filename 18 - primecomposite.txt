@@ -1,0 +1,48 @@
+//Calculate number of prime and composite number
+import java .util.*;
+public class pricom{
+    public static void main (String args[]){
+        int p=0, c=0, f=0, range = 0;
+        Scanner s = new Scanner (System.in);
+        try{
+            System.out.println("Enter the range: ");
+            range = s.nextInt();
+        } catch(InputMismatchException ime){
+            System.out.println("Give correct value");
+        }
+        if(range >0){
+            int a[] = new int[range];
+            for (int i = 0; i<range; i++){
+                try{
+                    System.out.println("Enter the number: ");
+                    a[i]= s.nextInt();
+                    if(a[i]>0){
+                        for (int y = 2; y<a[i]; y++){
+                            if ((a[i]%y) == 0 ){
+                                f = 2;
+                                break;
+                            }
+                            else{
+                                f=1;
+                            }
+                        }
+                        if(f==1){
+                            p++;
+                        }
+                        else{
+                            c++;
+                        }
+                    }
+                    else{
+                        System.out.println("Enter a Valid number");
+                    }
+                }catch(InputMismatchException ime){System.out.println("Enter a valid number");}
+            }   
+            System.out.println("Composit numbers = "+c);
+            System.out.println("Prime numbers = "+p);
+        }
+        else{
+            System.out.println("Enter a valid number");
+        }
+    }
+}

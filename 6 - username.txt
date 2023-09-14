@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+public class string{
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        int temp = 0;
+        System.out.println("Enter the username : ");
+        String s1 = s.nextLine();
+        System.out.println("Re-enter the username : ");
+        String s2 = s.nextLine();
+        char[] u1 = s1.toCharArray();
+        char[] u2 = s2.toCharArray();
+        int l1 = s1.length(), l2 = s2.length();
+        if((l1>l2)||(l1<l2)){
+            System.out.println("Username is invalid");
+        }
+        else{    
+            int l = l1;
+            for(int i=0;i<l;i++){
+                if(u1[i]!=u2[i]){
+                    temp = temp+1;
+                }
+            }
+        }
+        if(temp!=0){
+            System.out.println("Username is invalid");
+        }
+        else{
+            System.out.println("Username is valid");
+        }
+    }
+}

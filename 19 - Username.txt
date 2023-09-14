@@ -1,0 +1,17 @@
+//user name
+import java.util.*;
+public class username{
+    public static void main(String args[]){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the User Name: ");
+        String str = s.nextLine();
+        System.out.println("re-Enter the User Name: ");
+        String restr = s.nextLine();
+        if(str.equals(restr)){
+            System.out.println("Your user name is currect");
+        }
+        else{
+            System.out.println("Please enter the correct sentence");
+        }
+    }
+}

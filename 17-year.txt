@@ -1,0 +1,26 @@
+//Calculating number of year,month and days
+import java.util.*;
+public class dayscalc{
+    public static void main(String args[]){
+        int days;
+        Scanner s = new Scanner (System.in);
+        try{
+            System.out.println("Enter the number of days to be calculated: ");
+            days = s.nextInt();
+            if(days>0){
+            int y = days/365;
+            int m = (days%365)/30;
+            int w = ((days%365)%30)/7;
+            int d = (((days%365)%30)%7);
+            System.out.println("Year = "+y);
+            System.out.println("Months = "+m);
+            System.out.println("Weeks = "+w);
+            System.out.println("Days = "+d);
+            }
+            else{System.out.println("Enter a valid number");
+            }
+            }catch(InputMismatchException ime){
+            System.out.println("Give correct value");
+        }
+    }
+}
